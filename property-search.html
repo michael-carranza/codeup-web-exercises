@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Property Search></title>
 </head>
 <body>
-    $END$
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="property_type">Property Type</label>
+        <input type="text" name="property_type" id="property_type" placeholder="username"><br>
+        <label for="min_sq_ft">Minimum Square Footage</label>
+        <input type="text" name="min_sq_ft" id="min_sq_ft" placeholder="min sq ft"><br>
+        <label for="min_price">Minimum Price</label>
+        <input type="text" name="min_price" id="min_price" placeholder="min price"><br>
+        <label for="max_price">Maximum Price</label>
+        <input type="text" name="max_price" id="max_price" placeholder="max price"><br>
+        <label for="zipcode">Zipcode</label>
+        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode"><br>
+        <label for="bedrooms">Number of Bedrooms</label>
+        <input type="text" name="bedrooms" id="bedrooms" placeholder="# of bedrooms"><br>
+        <label for="bathrooms">Number of Bathrooms</label>
+        <input type="text" name="bathrooms" id="bathrooms" placeholder="# of bathrooms"><br>
+        <button type="submit">Search Now</button>
+    </form>
 </body>
 </html>

@@ -1,0 +1,103 @@
+body {
+    margin: 0 auto;
+    max-width: 56em;
+    background-image: url(../images/paper3.jpg);
+    font-family: 'Neucha', cursive;
+    color: #8e1004;
+}
+header{
+    background: #f9f5e3;
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    text-align: center;
+    position:relative;
+    font-family: 'Neucha', cursive;
+    color: #8e1004;
+    opacity:0.75;
+}
+header h1{
+    font-size:3em;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+main{
+    background: #f9f5e3;
+    min-height:700px;
+    width: calc(72% - 8px);
+    float:right;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    font-family: 'Neucha', cursive;
+    opacity:0.75;
+}
+main h1{
+    text-align: center;
+    text-decoration: underline;
+}
+aside{
+    background: #f9f5e3;
+    min-height:700px;
+    width:28%;
+    float:left;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size:20px;
+    border: 2px solid black;
+    font-family: 'Neucha', cursive;
+    opacity:0.75;
+}
+footer {
+    background: #f9f5e3;
+    height: 50px;
+    clear:both;
+    border: 2px solid black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Neucha', cursive;
+    opacity:0.75;
+    position:relative;
+}
+footer li{
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#nav_bar>ul{
+    clear:both;
+    position: center;
+    bottom:0;
+    /*right:3px;
+    margin-bottom: 4px;*/
+}
+#nav_box{
+    padding-left: 10px;
+}
+#nav_box ul{list-style-type: none}
+#hidden {
+    display: none;
+    height: 100px;
+}
+:checked + #hidden {
+    display: contents;
+}
+#nav_box h2{
+    text-decoration:underline;
+}
+#nav_box h3{
+    padding-bottom: 0;
+}
+img #dragon{
+    position:absolute;
+    left:5px;
+}
+img #dice{
+    position:absolute;
+    right:5px;
+}

@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Checkout</title>
+    <style>
+        body {
+            background-image: url(images/paper.jpg);
+        }
+    </style> {
 </head>
 <body>
-    $END$
+    <!-- Make all fields required except for the checkbox
+Add an input for credit card number, expiration month/year, and security code
+Add inputs for the billing address
+Add a checkbox that says “Keep this credit card on file for future transactions”
+The submit button’s text should say “Buy Now!” -->
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="credit_card">Credit Card Number</label>
+        <input type="text" name="credit_card" id="credit_card" placeholder="credit card number" required><br>
+        <label for="exp_month">Expiration Month</label>
+        <input type="text" name="exp_month" id="exp_month" placeholder="month" required><br>
+        <label for="exp_year">Expiration Year</label>
+        <input type="text" name="exp_year" id="exp_year" placeholder="year" required><br>
+        <label for="sec_code">Password</label>
+        <input type="password" name="sec_code" id="sec_code" placeholder="security code" required><br>
+        <label for="address">Billing Address</label>
+        <input type="textarea" name="address" id="address" placeholder="Enter your billing address here." required><br>
+        <p>Keep this credit card on file for future transactions.
+            <input type="checkbox" name="save_card" id="save_card"></p>
+        <button type="submit">Buy Now!</button><br>
+
+    </form>
 </body>
 </html>
