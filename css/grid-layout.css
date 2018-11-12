@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    padding: 10px;
+}
+.row {
+    margin: 5%;
+    padding-bottom: 1px;
+}
+.column.one-third {
+    width: 33.33%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.one-half {
+    width: 50%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.one-fourth {
+    width: 25%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.one-eighth {
+    width: 12.5%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.two-thirds {
+    width: 66.66%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.three-eighths {
+    width: 37.5%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.two-fourths {
+    width: 50%;
+    border:1px solid black;
+    background-color: lightgray;
+}
+.column.offset-left {
+    float:left;
+    margin-left:33.33%;
+}
