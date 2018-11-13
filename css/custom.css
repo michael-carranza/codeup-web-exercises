@@ -1,0 +1,71 @@
+.nav-link{
+    color:whitesmoke;
+}
+.nav-link li{
+    padding-left:5%;
+    padding-right:5%;
+}
+a.nav-link:hover {
+    background-color:darkgray;
+}
+.sign-in{
+    position:fixed;
+    right:5%;
+}
+a.navbar-brand:hover{
+    background-color: darkgray;
+}
+button.button:hover{
+    background-color: darkgray;
+}
+.jumbotron{
+    background-image: url("../images/pizza.png");
+    background-size: cover;
+}
+.jumbotron>h1{
+    background-color: white;
+    text-align:center;
+    font-size: 7em;
+    opacity:.75;
+}
+a.nav-link{
+    color:black;
+}
+h2{
+    margin-left: 3%;
+}
+.card-text{width:100%;
+font-size:2em;
+}
+#btn #btn-primary{
+    float:right;
+}
+.card-title{
+    background-color: #1689ff;
+    font-size: 2em;
+    color:white;
+    padding-left: 1%;
+}
+div.card-body{
+    width:98%;
+}
+form>h5{
+    width:30rem;
+    text-align:left;
+    padding-left: 1%;
+    font-size: 5em;
+}
+form{
+    margin-left:1%;
+}
+.btn-toolbar.justify-content-between{
+    margin-left:50%;
+    margin-bottom: 5%;
+}
+.card-footer{
+    background-color: lightgray;
+    height:4em;
+}
+body {
+    font-size: 2em;
+}
