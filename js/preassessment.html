@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pre-Assessment</title>
+</head>
+<body>
+    <script>
+        function isTrue(input){
+            return input === true;
+        }
+        function isFalse(input){
+            if (input === undefined){
+                return input === false;
+            }
+            else if(input===33){
+                return input === false;
+            }
+            else if(input==null){
+                return input === false;
+            }
+            else if(input===true){
+                return input === false;
+            }
+            else if(input === false){
+                return true;
+            }
+            else{
+            return input === true;
+        }}
+        function not(input){
+            return !input === true;
+        }
+        function addOne(input){
+            if (input === Infinity){
+                return Infinity;
+            }
+            else {
+                var addOne = (parseInt(input) + 1);
+                return addOne;
+            }
+        }
+        function isEven(input){
+            var isEven = (input % 2);
+            if(input===false){
+                return false;
+            }
+            else if (isEven === 0){
+                return true;
+            }
+            else {return false}
+        }
+        function isIdentical(a,b){
+            if (a === b){
+                return true;
+            }
+            else {return false
+            }
+        }
+        function isEqual(a,b){
+            if (a == b){
+                return true;
+            }
+            else {return false
+            }
+        }
+        function or(a,b){
+            return (a || b);
+        }
+        function and(a,b){
+            return (a && b);
+        }
+        function concat(a,b) {
+                var stringA = a.toString();
+                var stringB = b.toString();
+            return (stringA + stringB);
+        }
+
+        // Define a function named concat that takes in two input arguments.
+        // If both arguments are strings, then return the concatenated result.
+        // If two numbers are provided, then return the string concatenation of
+        // each set of numerals.
+    </script>
+
+</body>
+</html>

@@ -39,6 +39,11 @@
     border:1px solid black;
     background-color: lightgray;
 }
+.full{
+    width:100%;
+    border:1px solid black;
+    background-color: lightgray;
+}
 .column.two-fourths {
     width: 50%;
     border:1px solid black;
@@ -47,4 +52,5 @@
 .column.offset-left {
     float:left;
     margin-left:33.33%;
+
 }

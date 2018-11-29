@@ -1,10 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!-- Your custom styles go here -->
 </head>
 <body>
-    $END$
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Your custom JS goes here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li><form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search"></form></li>
+                    <button class="button" type="submit">Search stores near you</button>
+                </form>
+                <li class="nav-item">
+                    <a class="sign-in" href="#">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+    </div>
+    <section>
+        <h2>Build Your Own Pizza</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="crust-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="crust" aria-selected="true">1. Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">2. Cheese</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false">3. Toppings</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="crust-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Choose Size and Crust</h5>
+                        <label for="exampleFormControlSelect1">Hand-Tossed<br>Garlic seasoned crust with a rich, buttery taste.</label>
+                        <select class="form-control" style="background-color:lightgray;" id="exampleFormControlSelect1">
+                            <option>Small (10")</option>
+                            <option>Medium (12")</option></select><br>
+                        <label for="exampleFormControlSelect2">Thin and Crispy<br>Thin enough for optimum crispy to crunchy ratio.</label>
+                        <select class="form-control" style="background-color:lightgray;" id="exampleFormControlSelect2">
+                            <option>Medium (12")</option>
+                            <option>Large (14")</option></select>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-secondary" style="margin-left: 99%">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> Choose Cheese and Sauce</h5>
+                        <label for="exampleFormControlSelect3"><h4>Cheese</h4>How Much?</label>
+                        <select class="form-control" style="background-color:lightgray;" id="exampleFormControlSelect3">
+                            <option>Light</option>
+                            <option>Regular</option>
+                            <option>Extra</option>
+                            <option>Double</option></select><br>
+                        <label for="exampleFormControlSelect4"><h4>Sauce</h4>What Type?</label>
+                        <select class="form-control" style="background-color:lightgray;" id="exampleFormControlSelect4">
+                            <option>Tomato</option>
+                            <option>Marinara</option>
+                            <option>Barbecue</option>
+                            <option>Alfredo</option></select><br>
+                        <label for="exampleFormControlSelect5"><h4>How Much?</h4></label>
+                        <select class="form-control" style="background-color:lightgray;" id="exampleFormControlSelect5">
+                            <option>Light</option>
+                            <option>Regular</option>
+                            <option>Extra</option></select><br>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-secondary">Previous Step</button>
+                                <button type="button" class="btn btn-secondary">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id=exampleFormControlSelect6> Choose Your Toppings</h5>
+                        <label for="exampleFormControlSelect6"><h4>Choose Meats</h4></label><br>
+                        <input type="checkbox" name="beef" value="beef"> Beef<br>
+                        <input type="checkbox" name="ham" value="ham"> Ham<br>
+                        <input type="checkbox" name="pepperoni" value="pepperoni"> Pepperoni<br>
+                        <input type="checkbox" name="bacon" value="bacon"> Bacon<br><br>
+                        <label for="exampleFormControlSelect6"><h4>Choose Veggies</h4></label><br>
+                        <input type="checkbox" name="green-peppers" value="green-peppers"> Green Peppers<br>
+                        <input type="checkbox" name="mushrooms" value="mushrooms"> Mushrooms<br>
+                        <input type="checkbox" name="onions" value="onions"> Onions<br>
+                        <input type="checkbox" name="jalapenos" value="jalapenos"> Jalapenos<br><br>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                                <button type="button" style="margin-left:50%;" class="btn btn-secondary">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

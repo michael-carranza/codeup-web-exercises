@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <style>
+        th {
+            background-color: lightgray;
+        }
+        td {
+            text-align: center;
+            width: 20em;
+            border:2px solid black;
+        }
+        th {
+            text-align: center;
+            width: 20em;
+            border:2px solid black;
+        }
+        tbody{
+            width:100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/arrays.js">
+    </script>
+    <h1>Initiative Tracker</h1>
+    <form style="margin-left: 5%;margin-right:5%">
+        <label>Name<input  type="text" id="name1"></label>
+        <label>Roll Bonus<input  type="text" id="bonus1"></label>
+        <label>Faction<input  type="text" id="faction1"></label>
+        <button type="button" id="new-fighter" value="Enter" onclick=newFighter()>Enter</button>
+        <button type="button" id="sort-button" value="Sort" onclick=sortTable()>Sort</button>
+    </form>
+    <br>
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th onclick="sortTable(0)">Total</th>
+            <th>Roll</th>
+            <th>Bonus</th>
+            <th>Faction</th>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internal JS</title>
+</head>
+<body>
+    <script>
+        // FAVORITE COLOR
+
+        // console.log("Hello from inline JavaScript!");
+        // var color = prompt('What is your favorite color?');
+        // console.log('Nice! ' + color +" is my favorite color, too.");
+        // alert('Nice! ' + color +" is my favorite color, too.");
+
+
+        // MOVIE RENTALS
+
+        // var lm = prompt('How many days did you keep The Little Mermaid?');
+        // var bb = prompt('How many days did you keep Brother Bear?');
+        // var he = prompt('How many days did you keep Hercules?');
+        //
+        // var cost = 3;
+        //
+        // var total = ((cost*lm) + (cost*bb) + (cost*he))
+        // alert('The total cost for renting all 3 movies was $' + total + ".")
+
+        // FACEBOOK, GOOGLE, AMAZON
+
+        // var gp = 400;
+        // var ap = 380;
+        // var fp = 350;
+        //
+        // var gh = prompt('How many hours did you work for Google?');
+        // var ah = prompt('How many hours did you work for Amazon?');
+        // var fh = prompt('How many hours did you keep FaceBook?');
+        //
+        // var total = ((gh*gp) + (ah*ap) + (fh*fp));
+        // alert('You earned a total of $' + total + " this week.")
+
+        // ENROLLMENT
+        //
+        // var classIsFull = false;
+        // var scheduleConflict = true;
+        //
+        // if (!classIsFull && !scheduleConflict) {
+        //     alert('You are free to enroll in this class.')
+        // }
+        // else {
+        //     alert('You are NOT free to enroll at this time.')
+        // }
+
+        //APPLYING DISCOUNT
+
+        var itemsPurchased = 1;
+        var offerExpired = false;
+        var isPremiumMember = false;
+
+        if ((itemsPurchased > 2 || isPremiumMember) && !offerExpired){
+            alert('You may apply this discount.')
+        }
+        else {
+            alert('You may NOT apply this discount.')
+        }
+    </script>
+    <script src="js/external.js"></script>
+</body>
+</html>
