@@ -51,21 +51,6 @@ function newFighter() {
 
 }
 
-// button.addEventListener("click", newFighter());
-// var fighterList = {
-//     people: [
-//         {name: "Jim",
-//         total: 23,
-//         roll: 13,
-//         bonus: "happy time",
-//         faction: "devil"},
-//         {name: "funboi",
-//         total: 23}
-//
-//     ]
-//}
-//fighterList.people[1].name === "funboi"
-
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("myTable");
@@ -95,8 +80,48 @@ function sortTable() {
         if (shouldSwitch) {
             /*If a switch has been marked, make the switch
             and mark that a switch has been done:*/
-            rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
         }
     }
 }
+function test(){
+    var name1 = ("Test" + Math.floor(Math.random() * 20) + 1);
+    var faction1 = "Enemy";
+    var roll1 = Math.floor(Math.random() * 20) + 1;
+    var bonus1 = 5;
+    var total1 = parseFloat(roll1 + 5);
+    var fighter1 = [
+        name1,
+        total1,
+        roll1,
+        bonus1,
+        faction1
+    ];
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    cell1.innerHTML = fighter1[0];
+    cell2.innerHTML = fighter1[1];
+    cell3.innerHTML = fighter1[2];
+    cell4.innerHTML = fighter1[3];
+    cell5.innerHTML = fighter1[4];
+}
+function reverseTableRows(tableId) {
+    var table = document.getElementById(tableId),
+        newTbody = document.createElement('tbody'),
+        oldTbody = table.tBodies[0],
+        rows = oldTbody.rows,
+        i = rows.length - 1;
+
+    while (i >= 0) {
+        newTbody.appendChild(rows[i]);
+        i -= 1;
+    }
+    oldTbody.parentNode.replaceChild(newTbody, oldTbody);
+}
+
