@@ -52,7 +52,7 @@ function newFighter() {
 }
 
 function sortTable() {
-    // document.getElementById('myTable').deleteRow(0);
+    document.getElementById('myTable').deleteRow(0);
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("myTable");
     switching = true;
@@ -132,4 +132,12 @@ function reverseTableRows(tableId) {
         i -= 1;
     }
     oldTbody.parentNode.replaceChild(newTbody, oldTbody);
+}
+function clear2() {
+    var rows = document.getElementById('myTable').rows.length;
+    for(i=rows;i>1;i--){
+        document.getElementById('myTable').deleteRow(i - 1);
+    }
+        document.getElementById("myTable").insertRow(0);
+        document.getElementById("myTable").deleteRow(1);
 }

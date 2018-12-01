@@ -33,20 +33,23 @@
         <button type="button" id="new-fighter" value="Enter" onclick=newFighter()>Enter</button>
         <button type="button" id="test-button" value="Test" onclick=test()>Test</button>
         <button type="button" id="sort-button" value="Sort" onclick=sortTable();reverseTableRows('myTable')>Sort</button>
-        <button type="button" id="clear-button" value="Clear" onclick="document.getElementById('myTable').deleteRow(1)">Clear</button>
+        <button type="button" id="clear-button" value="Clear" onclick=clear2()>Clear</button>
+
     </form>
     <br>
-    <table id="myTable">
-        <thead><tr>
+    <table id="headers">
+        <tr>
             <th>Name</th>
             <th>Total</th>
             <th>Roll</th>
             <th>Bonus</th>
             <th>Faction</th>
-        </tr></thead>
+        </tr>
+        <tbody>
+        </tbody>
     </table>
-    <!--<table id="myTable">-->
-        <!--<tr></tr>-->
-    <!--</table>-->
+    <table id="myTable">
+        <tr></tr>
+    </table>
 </body>
 </html>
