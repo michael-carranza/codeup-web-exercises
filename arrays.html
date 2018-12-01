@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>Arrays</title>
     <style>
+        table { width:100%}
         td {
             text-align: center;
-            width: 19em;
+            width: 20%;
             border:2px solid black;
         }
         th {
             text-align: center;
-            width: 19em;
+            width: 20%;
             border:2px solid black;
             background-color: lightgray;
         }
@@ -24,31 +25,28 @@
 <body>
     <script src="js/arrays.js">
     </script>
-    <h1>Initiative Tracker</h1>
+    <h1 style="text-align:center">Initiative Tracker</h1>
     <form style="margin-left: 5%;margin-right:5%">
         <label>Name<input  type="text" id="name1"></label>
         <label>Roll Bonus<input  type="text" id="bonus1"></label>
         <label>Faction<input  type="text" id="faction1"></label>
         <button type="button" id="new-fighter" value="Enter" onclick=newFighter()>Enter</button>
-        <button type="button" id="sort-button" value="Sort" onclick=sortTable()>Sort</button>
         <button type="button" id="test-button" value="Test" onclick=test()>Test</button>
-        <button type="button" id="flip-button" value="Flip" onclick=reverseTableRows('myTable')>Flip</button>
-
+        <button type="button" id="sort-button" value="Sort" onclick=sortTable();reverseTableRows('myTable')>Sort</button>
+        <button type="button" id="clear-button" value="Clear" onclick="document.getElementById('myTable').deleteRow(1)">Clear</button>
     </form>
     <br>
-    <table id="headers">
-        <tr>
+    <table id="myTable">
+        <thead><tr>
             <th>Name</th>
             <th>Total</th>
             <th>Roll</th>
             <th>Bonus</th>
             <th>Faction</th>
-        </tr>
+        </tr></thead>
     </table>
-    <table id="myTable">
-        <tr>
-
-        </tr>
-    </table>
+    <!--<table id="myTable">-->
+        <!--<tr></tr>-->
+    <!--</table>-->
 </body>
 </html>

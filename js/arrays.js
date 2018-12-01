@@ -52,6 +52,7 @@ function newFighter() {
 }
 
 function sortTable() {
+    // document.getElementById('myTable').deleteRow(0);
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("myTable");
     switching = true;
@@ -87,9 +88,16 @@ function sortTable() {
 }
 function test(){
     var name1 = ("Test" + Math.floor(Math.random() * 20) + 1);
-    var faction1 = "Enemy";
+    var faction1 = Math.floor(Math.random() * 3) + 1;
+        if (faction1 === 1){
+            faction1 = 'Ally';
+        }else if (faction1 === 2){
+        faction1 = 'Enemy';
+         } else if (faction1 === 3){
+            faction1 = 'Neutral';
+        }
     var roll1 = Math.floor(Math.random() * 20) + 1;
-    var bonus1 = 5;
+    var bonus1 = Math.floor(Math.random() * 5) + 1;
     var total1 = parseFloat(roll1 + 5);
     var fighter1 = [
         name1,
@@ -116,6 +124,7 @@ function reverseTableRows(tableId) {
         newTbody = document.createElement('tbody'),
         oldTbody = table.tBodies[0],
         rows = oldTbody.rows,
+        // rows = document.getElementById('myTable').rows-1;
         i = rows.length - 1;
 
     while (i >= 0) {
@@ -124,4 +133,3 @@ function reverseTableRows(tableId) {
     }
     oldTbody.parentNode.replaceChild(newTbody, oldTbody);
 }
-
