@@ -1,19 +1,4 @@
-//var button = document.querySelectorAll("#new-fighter");
-// function createTable(tableData) {
-//     var table = document.createElement('table');
-//     var tableBody = document.createElement('tbody');
-//     tableData.forEach(function(rowData) {
-//         var row = document.createElement('tr');
-//         rowData.forEach(function(cellData) {
-//             var cell = document.createElement('td');
-//             cell.appendChild(document.createTextNode(cellData));
-//             row.appendChild(cell);
-//         });
-//         tableBody.appendChild(row);
-//     });
-//     table.appendChild(tableBody);
-//     document.body.appendChild(table);
-// }
+
 
 
 
@@ -89,13 +74,13 @@ function sortTable() {
 function test(){
     var name1 = ("Test" + Math.floor(Math.random() * 20) + 1);
     var faction1 = Math.floor(Math.random() * 3) + 1;
-        if (faction1 === 1){
-            faction1 = 'Ally';
-        }else if (faction1 === 2){
+    if (faction1 === 1){
+        faction1 = 'Ally';
+    }else if (faction1 === 2){
         faction1 = 'Enemy';
-         } else if (faction1 === 3){
-            faction1 = 'Neutral';
-        }
+    } else if (faction1 === 3){
+        faction1 = 'Neutral';
+    }
     var roll1 = Math.floor(Math.random() * 20) + 1;
     var bonus1 = Math.floor(Math.random() * 5) + 1;
     var total1 = parseFloat(roll1 + 5);
@@ -138,6 +123,6 @@ function clear2() {
     for(i=rows;i>1;i--){
         document.getElementById('myTable').deleteRow(i - 1);
     }
-        document.getElementById("myTable").insertRow(0);
-        document.getElementById("myTable").deleteRow(1);
+    document.getElementById("myTable").insertRow(0);
+    document.getElementById("myTable").deleteRow(1);
 }

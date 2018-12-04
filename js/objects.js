@@ -40,6 +40,25 @@
     //     {name: 'Ryan', amount: 250},
     //     {name: 'George', amount: 320}
     // ];
+    //
+
+    //     for (var i = 0; i < shoppers.length; i++) {
+    //             var name =shoppers[i].name;
+    //             var amount = shoppers[i].amount;
+    //             var savings = shoppers[i].amount * 0.12;
+    //             var newTotal = shoppers[i].amount * 0.88;
+    //         if (shoppers[i].amount >= 200) {
+    //             console.log("Congratulations, " + name + "! You qualify for a discount.");
+    //             console.log("Before your discount, your total was $" + amount + ".");
+    //             console.log("You saved a whopping $" +  savings + "!");
+    //             console.log(name + "'s new total cost is $" + newTotal + ".");
+    //         }
+    //         else {
+    //             console.log("Sorry, " + name + " but you do NOT qualify for a discount.");
+    //             console.log(name + "'s total cost is $" + amount + ".");
+    //         }
+    //     }
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -47,37 +66,22 @@
      * property. The author property should be an object with properties
      * `firstName` and `lastName`. Be creative and add at least 5 books to the
      * array
-     *
-     * Example:
-     * > console.log(books[0].title) // "The Salmon of Doubt"
-     * > console.log(books[0].author.firstName) // "Douglas"
-     * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /**
-     * TODO:
-     * Loop through the books array and output the following information about
-     * each book:
-     * - the book number (use the index of the book in the array)
-     * - the book title
-     * - author's full name (first name + last name)
-     *
-     * Example Console Output:
-     *
-     *      Book # 1
-     *      Title: The Salmon of Doubt
-     *      Author: Douglas Adams
-     *      ---
-     *      Book # 2
-     *      Title: Walkaway
-     *      Author: Cory Doctorow
-     *      ---
-     *      Book # 3
-     *      Title: A Brief History of Time
-     *      Author: Stephen Hawking
-     *      ---
-     *      ...
-     */
+    var books = [{title:"The Salmon of Doubt", author: {firstName:"Douglas",lastName:"Adams"}},
+        {title:"Walkaway", author: {firstName:"Cory",lastName:"Doctorow"}},
+        {title:"A Brief History of Time", author: {firstName:"Stephen",lastName:"Hawking"}}
+    ];
+
+     for (var i = 0; i < books.length; i++) {
+         var title =books[i].title;
+         var firstName = books[i].author.firstName;
+         var lastName = books[i].author.lastName;
+         console.log("Book #" + Number(i+1));
+         console.log("Title: " + title);
+         console.log("Author: " + firstName + " " + lastName);
+         console.log("--------")
+     }
 
     /**
      * Bonus:
