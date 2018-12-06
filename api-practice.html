@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+<body>
+    <h1>My House... in the Middle of My Street.</h1>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <script>
+        // Initialize the platform object:
+        var platform = new H.service.Platform({
+            'app_id': 'q5mzScCxu14ji7qLZcsJ',
+            'app_code': 'TWYuVGLjn9HrAkwSwqxrXA'
+        });
+
+        // Obtain the default map types from the platform object
+        var maptypes = platform.createDefaultLayers();
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+                zoom: 14,
+                center: {lng:-98.650739, lat: 29.472071}
+            });
+        // Define a variable holding SVG mark-up that defines an icon image:
+        var svgMarkup = '<svg width="24" height="24" ' +
+            'xmlns="http://www.w3.org/2000/svg">' +
+            '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+            'height="22" /><text x="12" y="18" font-size="12pt" ' +
+            'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+            'fill="white">H</text></svg>';
+        var icon = new H.map.Icon(svgMarkup),
+            coords = {lat: 29.472071, lng: -98.650739},
+            marker = new H.map.Marker(coords, {icon: icon});
+        // Add the marker to the map and center the map at the location of the marker:
+        map.addObject(marker);
+        map.setCenter(coords);
+    </script>
+</body>
+</html>

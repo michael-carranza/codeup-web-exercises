@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps API</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 75%;
+            width: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+
+            // The location of Mencius' Gourmet Hunan
+            var mencius = {lat: 29.5112878, lng: -98.5720621};
+            // The map, centered at Mencius' Gourmet Hunan
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 17, center: mencius});
+            // The marker, positioned at Mencius' Gourmet Hunan
+            var marker = new google.maps.Marker({position: mencius, map: map});
+            var infoWindow = new google.maps.InfoWindow ({
+                content: "The Best General Tso's Chicken in Town!!"
+            });
+            infoWindow.open(map,marker);
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbr2Ncr3FZbpe0mC_0SRlfyuHTTb6onyU&callback=initMap"
+            async defer></script>
+</body>
+</html>

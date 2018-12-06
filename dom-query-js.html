@@ -50,13 +50,15 @@
             var listItems = document.getElementsByClassName('list-item');
             var first = listItems[0];
             first.style.color="blue";
-        }
-        var listener4 = function (event) {
-            var listItems = document.getElementsByClassName('list-item');
+            // var listItems = document.getElementsByClassName('list-item');
             var second = listItems[1];
             var fourth = listItems[3];
             second.style.color="gray";
             fourth.style.color="gray";
+        }
+        var listener4 = function (event) {
+            var subParagraphs = document.getElementsByClassName('sub-paragraph');
+            subParagraphs[0].innerHTML = 'Mission Accomplished!';
         }
         // add event listener to btn1
         var btn1 = document.getElementById('button1');
@@ -80,8 +82,7 @@
         // TODO: Set text color of li with dbid = 1 to blue
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-         var subParagraphs = document.getElementsByClassName('sub-paragraph');
-            subParagraphs.innerText('Mission Accomplished!')
+
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
     })();
 </script>
