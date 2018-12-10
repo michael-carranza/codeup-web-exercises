@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pre Assessment Practice</title>
+</head>
+<body>
+    <script>
+        function getHighest(arr){
+           var highest= Math.max(arr);
+            // console.log(Math.max.apply(null, arr));
+            return Math.max.apply(null, arr);
+        }
+
+        function getLowest(arr) {
+            var lowest= Math.min(arr);
+            // console.log(Math.min.apply(null, arr));
+            return Math.min.apply(null, arr);
+        }
+
+        var bigArray= [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+        ];
+        function sumAllNumbers(bigArray){
+            var sum1 = bigArray[0].reduce(add, 0);
+            var sum2 = bigArray[1].reduce(add, 0);
+            var sum3 = bigArray[2].reduce(add, 0);
+            var grandTotal = sum1+sum2+sum3;
+            function add(a, b) {
+                return a + b;
+            }
+            return grandTotal;
+        }
+    </script>
+</body>
+</html>
