@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
+
+        var codeCheck="";
+
+        $(document).keyup(function(event){
+            codeCheck = codeCheck + (event.keyCode);
+            console.log(codeCheck);
+        if (codeCheck == "3838404037393739666513"){
+            alert('You just gained 30 lives!!!!');
+        }
+        });
+
+
+    </script>
+</body>
+</html>
