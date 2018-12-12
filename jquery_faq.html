@@ -74,10 +74,17 @@
             });
             $('h3').click(function(event) {
                 event.preventDefault();
-               $(this).next().children().css('background-color',"yellow");
-                // if ($(".highlight")[0]){
-                //     $('li').css('background-color',"white");
-                // }
+                if ($(".highlight")[0]){
+                    $('li').removeClass('highlight');
+                }
+                $(this).next().children().toggleClass('highlight');
+            });
+            $('li').click(function(event) {
+                event.preventDefault();
+                if ($(".highlight")[0]){
+                    $('li').removeClass('highlight');
+                }
+                $(this).toggleClass('highlight');
             });
         });
     </script>
