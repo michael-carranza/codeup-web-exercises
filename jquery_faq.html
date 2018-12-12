@@ -5,7 +5,8 @@
     <title>National Park FAQ</title>
     <style>
         .invisible{display:none;}
-        dt{font-weight:bold;}
+        dt{font-weight:bold;
+        color:firebrick;}
         *{font-size:20px;}
         h1{
             font-size: 45px;
@@ -17,7 +18,7 @@
     <h1>National Park Facts!!</h1>
     <dl>
         <dt>The Largest National Park</dt>
-        <dd class="invisible"> Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+        <dd class="invisible" id="test"> Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
         <dt>Smallest National Park</dt>
         <dd class="invisible">Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
         <dt>What is the National Park System's Budget?</dt>
@@ -43,6 +44,11 @@
             $('dt').click(function(event) {
                 event.preventDefault();
                 $('dd').toggleClass('invisible');
+                $('dt').css('background-color',"white");
+                $(this).css('background-color',"yellow");
+                if ($(".invisible")[0]){
+                    $('dt').css('background-color',"white");
+                }
             });
         });
     </script>
