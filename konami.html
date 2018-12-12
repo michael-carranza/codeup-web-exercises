@@ -15,8 +15,9 @@
         $(document).keyup(function(event){
             codeCheck = codeCheck + (event.keyCode);
             console.log(codeCheck);
-        if (codeCheck == "3838404037393739666513"){
+        if (codeCheck.includes("3838404037393739666513")){
             alert('You just gained 30 lives!!!!');
+            $('*').css('background-image','url(https://i.pinimg.com/originals/f6/30/73/f63073e6f647e73f6fef94721d6603ce.jpg)');
         }
         });
 
