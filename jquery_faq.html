@@ -91,10 +91,14 @@
             });
             $('li').click(function(event) {
                 event.preventDefault();
-                if ($(".highlight")[0]){
-                    $('li').removeClass('highlight');
+                if ($(this).hasClass('highlight')) {
+                    $(this).removeClass('highlight');
                 }
+
+                else {
+                $('li').removeClass('highlight');
                 $(this).toggleClass('highlight');
+                }
             });
         });
     </script>
