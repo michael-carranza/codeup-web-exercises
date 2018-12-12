@@ -17,9 +17,21 @@
             font-weight:bold;
             text-decoration:underline;
         }
+        #signup{
+            font-size:28px;
+            text-decoration:none;
+        }
+        .list{display:none;}
+        .hidden{display:none;
+        font-size:42px;
+        color:firebrick;}
     </style>
 </head>
 <body>
+    <div>
+        <h1 id="signup">Would you like to sign up for our newsletter?<span id="cancel"> X </span></h1>
+
+    </div>
     <h1>National Park Facts!!</h1>
     <dl>
         <dt>The Largest National Park</dt>
@@ -43,6 +55,7 @@
         <dt>Super volcano in a national park?</dt>
         <dd class="invisible">The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is on pace to blow about 100,000 years from now.</dd>
     </dl>
+    <h2 class="hidden">Would you like to register for more park facts?</h2>
     <h3>First National Park</h3>
     <ul id="park1" class="list">
         <li>Fact 1</li>
@@ -51,14 +64,14 @@
         <li>Fact 4</li>
     </ul>
     <h3>Second National Park</h3>
-    <ul>
+    <ul class="list">
         <li>Fact 1</li>
         <li>Fact 2</li>
         <li>Fact 3</li>
         <li>Fact 4</li>
     </ul>
     <h3>Third National Park</h3>
-    <ul>
+    <ul class="list">
         <li>Fact 1</li>
         <li>Fact 2</li>
         <li>Fact 3</li>
@@ -67,6 +80,10 @@
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         $(document).ready(function() {
+            $('#cancel').click(function(event) {
+                event.preventDefault();
+                $('#signup').hide();
+            });
             $('dt').click(function(event) {
                 event.preventDefault();
                 $('dd').toggleClass('invisible');
@@ -78,6 +95,7 @@
             });
             $('h3').click(function(event) {
                 event.preventDefault();
+                $(this).next().slideToggle();
                 if ($(".highlight")[0]){
                     $('li').removeClass('highlight');
                 }
@@ -100,6 +118,11 @@
                 $(this).toggleClass('highlight');
                 }
             });
+            var delay = 8000; // delay time in milliseconds
+
+            var timeoutId = setTimeout(function () {
+                $('.hidden').show();
+            }, delay);
         });
     </script>
 </body>
