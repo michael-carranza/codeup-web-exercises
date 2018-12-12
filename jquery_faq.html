@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Park FAQ</title>
+    <style>
+        .invisible{display:none;}
+        dt{font-weight:bold;}
+        *{font-size:20px;}
+        h1{
+            font-size: 45px;
+            text-align:center;
+        text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <h1>National Park Facts!!</h1>
+    <dl>
+        <dt>The Largest National Park</dt>
+        <dd class="invisible"> Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+        <dt>Smallest National Park</dt>
+        <dd class="invisible">Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+        <dt>What is the National Park System's Budget?</dt>
+        <dd class="invisible">Fiscal Year (FY) 2014 Enacted: $2.98 billion</dd>
+        <dt>The nation’s deepest cave</dt>
+        <dd class="invisible">1,593 ft deep in New Mexico at Carlsbad Caverns National Park</dd>
+        <dt>Yearly Attendance</dt>
+        <dd class="invisible">In 2014, more than 290 million people visited the National Parks.</dd>
+        <dt>Total Acreage</dt>
+        <dd class="invisible">51 million acres! About the size of Kansas.</dd>
+        <dt>The first national park</dt>
+        <dd class="invisible">Yellowstone, was created in 1872 by President Ulysses S. Grant.</dd>
+        <dt>Caves as national parks?</dt>
+        <dd class="invisible">Wind Cave National Park is the first cave to be named a national park</dd>
+        <dt>The only state without a national park or monument</dt>
+        <dd class="invisible">It is actually the country’s first state, Delaware. Poor Delaware.</dd>
+        <dt>Super volcano in a national park?</dt>
+        <dd class="invisible">The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is on pace to blow about 100,000 years from now.</dd>
+    </dl>
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('dt').click(function(event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+            });
+        });
+    </script>
+</body>
+</html>
