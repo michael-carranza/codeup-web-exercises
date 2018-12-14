@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <style>
+        table{margin-left: auto;
+        margin-right: auto}
+        h1{text-align:center;
+        color:white}
+        td{width:12%;
+        text-align:center;
+        border: 2px solid firebrick;
+        background-color: white}
+        th{
+            text-decoration: underline;
+            background-color: firebrick;
+        }
+        body{background-image: url("images/bricks.jpg")}
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+    <button id="refresh">Refresh</button>
+    <script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+    "use strict";
+
+    $.ajax('data/inventory.json').done(function(data){
+
+var row = "";
+        data.forEach(function(elem){
+          row += "<tr>";
+          row += "<td>" + elem.title + "</td>";
+          row += "<td>" + elem.quantity + "</td>";
+          row += "<td>" + "$" + elem.price + "</td>";
+          row += "<td>" + elem.categories.join(', ') + "</td>";
+          row += "</tr>";
+        $('#insertProducts').append(row);
+        var row = "";
+        });
+    });
+
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+$('#refresh').click(function(){
+    $.ajax('data/inventory.json').done(function(data){
+        $('tbody').empty();
+        var row = "";
+        data.forEach(function(elem){
+            row += "<tr>";
+            row += "<td>" + elem.title + "</td>";
+            row += "<td>" + elem.quantity + "</td>";
+            row += "<td>" + "$" + elem.price + "</td>";
+            row += "<td>" + elem.categories.join(', ') + "</td>";
+            row += "</tr>";
+            $('#insertProducts').append(row);
+            var row = "";
+        });
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>El Weather Map</title>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body{background-color: #aadafb}
+        #cardBox{
+            float:left;
+            z-index: 100;}
+        .jumbotron{
+        }
+        .card{
+            border: 1px solid lightgray;
+            text-align:center;
+            background-color: #F2F2F2;
+        }
+        .card-subtitle{margin-top:0;
+        margin-bottom:0;}
+        .card-title{margin-bottom:0;}
+        p.card-text{margin-top:0}
+    </style>
+</head>
+<body>
+    <div id="bigBox">
+        <div class="jumbotron">
+            <h1 class="display-4">Weather Application</h1>
+            <h3 class="display-4"> San Antonio</h3>
+        </div>
+            <div style="width: 800px; height: 180px" id="cardBox">
+                <div class="card" style="width: 14rem;float:left">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="min1"></span> / <span id="max1"></span></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><div id="img1"></div></h6>
+                        <p class="card-text">Cloud:<span id="cloud1"></span><br>Humidity:<span id="humidity1"></span><br>Wind:<span id="wind1"></span><br>Pressure:<span id="pressure1"></span><br></p>
+                    </div>
+                </div>
+                <div class="card" style="width: 14rem;float:left">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="min2"></span> / <span id="max2"></span></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><div id="img2"></div></h6>
+                        <p class="card-text">Cloud:<span id="cloud2"></span><br>Humidity:<span id="humidity2"></span><br>Wind:<span id="wind2"></span><br>Pressure:<span id="pressure2"></span><br></p>
+                    </div>
+                </div>
+                <div class="card" style="width: 14rem;float:left">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="min3"></span> / <span id="max3"></span></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><div id="img3"></div></h6>
+                        <p class="card-text">Cloud:<span id="cloud3"></span><br>Humidity:<span id="humidity3"></span><br>Wind:<span id="wind3"></span><br>Pressure:<span id="pressure3"></span><br></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div style="width: 678px; height: 480px" id="mapContainer"></div>
+    <script src="js/jquery-3.3.1.js"></script>
+<script>
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/forecast",
+        type: "GET",
+        data: {
+        APPID: "b1a478e0676d5cea67641bdcedcf49d2",
+        coord: {lat: 29.423017, lon: -98.48527},
+        id: 4726206,
+        units: "imperial"
+        // lang: "es"
+    }
+    }).done(function(data) {
+        var count = 1;
+        console.log(data);
+        for(var i=15;i<=39;i+=8) {
+            var tempMax = data.list[i].main.temp_max;
+            var tempMin = data.list[i].main.temp_min;
+            var weatherType = data.list[i].weather[0].main;
+            var weatherDetail = data.list[i].weather[0].description;
+            var windSpeed = data.list[i].wind.speed;
+            var pressure = data.list[i].main.pressure;
+            var cloud = data.list[i].weather[0].description;
+            var humidity = data.list[i].main.humidity;
+            var icon = data.list[i].weather[0].icon;
+            // var img= "images/"+ data + ".png";
+            // console.log(icon);
+
+            $("#min" + count).text(tempMin);
+            $("#max" + count).text(tempMax);
+            $("#wind" + count).text(" "+ windSpeed);
+            $("#pressure" + count).text(" "+ pressure);
+            $("#cloud" + count).text(" "+ cloud);
+            $("#humidity" + count).text(" "+ humidity);
+            var img = "http://openweathermap.org/img/w/" + icon + ".png";
+            $("#img" + count).html("<img src = " + img + ">");
+            count++;
+        }
+    });
+
+    // GENERATING THE MAP
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'q5mzScCxu14ji7qLZcsJ',
+        'app_code': 'TWYuVGLjn9HrAkwSwqxrXA'
+    });
+
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.normal.map,
+        {
+            zoom: 4,
+            center: {lng:-98, lat: 30}
+        });
+
+</script>
+</body>
+</html>
