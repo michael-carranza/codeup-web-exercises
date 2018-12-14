@@ -27,6 +27,7 @@
         margin-bottom:0;}
         .card-title{margin-bottom:0;}
         p.card-text{margin-top:0}
+        canvas{margin-top: 10px;}
     </style>
 </head>
 <body>
@@ -85,8 +86,7 @@
             var cloud = data.list[i].weather[0].description;
             var humidity = data.list[i].main.humidity;
             var icon = data.list[i].weather[0].icon;
-            // var img= "images/"+ data + ".png";
-            // console.log(icon);
+            var img = "http://openweathermap.org/img/w/" + icon + ".png";
 
             $("#min" + count).text(tempMin);
             $("#max" + count).text(tempMax);
@@ -94,31 +94,26 @@
             $("#pressure" + count).text(" "+ pressure);
             $("#cloud" + count).text(" "+ cloud);
             $("#humidity" + count).text(" "+ humidity);
-            var img = "http://openweathermap.org/img/w/" + icon + ".png";
             $("#img" + count).html("<img src = " + img + ">");
             count++;
         }
     });
 
     // GENERATING THE MAP
-    // Initialize the platform object:
-    var platform = new H.service.Platform({
-        'app_id': 'q5mzScCxu14ji7qLZcsJ',
-        'app_code': 'TWYuVGLjn9HrAkwSwqxrXA'
-    });
+    function initMap() {
+        // The location of SA
+        var sanAntonio = {lat: 29.481137, lng: -98.7946066};
+        // The map, centered at SA
+        var map = new google.maps.Map(
+            document.getElementById('mapContainer'), {zoom: 8, center: sanAntonio});
+        // The marker, positioned at SA
+        var marker = new google.maps.Marker({position: sanAntonio, map: map});
+    }
 
-    // Obtain the default map types from the platform object
-    var maptypes = platform.createDefaultLayers();
-
-    // Instantiate (and display) a map object:
-    var map = new H.Map(
-        document.getElementById('mapContainer'),
-        maptypes.normal.map,
-        {
-            zoom: 4,
-            center: {lng:-98, lat: 30}
-        });
 
 </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbr2Ncr3FZbpe0mC_0SRlfyuHTTb6onyU&callback=initMap">
+    </script>
 </body>
 </html>
